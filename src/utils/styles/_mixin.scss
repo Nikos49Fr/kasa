@@ -1,0 +1,9 @@
+
+// Usage:
+//   @include text(16px, 600);
+@mixin text($size, $weight: 400) {
+    font-family: "Montserrat", sans-serif;
+    font-size: $size;
+    font-weight: $weight;
+    line-height: 1.43;
+}

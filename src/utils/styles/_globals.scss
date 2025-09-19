@@ -1,0 +1,17 @@
+@use "../../utils/styles/variables" as *;
+
+:root {
+  font-family: "Montserrat", sans-serif;
+  line-height: 143%;
+  font-weight: 400;
+
+  color: $main-color;
+  background-color: $main-bg-color;
+}
+
+body {
+  margin: auto;
+  min-width: 320px;
+  max-width: 1440px;
+  min-height: 100vh;
+}

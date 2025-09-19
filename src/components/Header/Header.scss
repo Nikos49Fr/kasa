@@ -1,0 +1,47 @@
+@use "../../utils/styles/mixin" as *;
+@use "../../utils/styles/variables" as *;
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 40px 100px;
+    height: 68px;
+
+    &-nav {
+        display: flex;
+        justify-content: space-between;
+        vertical-align: bottom;
+        gap: 57px;
+        @include text(24px, 500);
+    }
+}
+
+@media (max-width: $tablet) {
+    .header {
+        margin: 30px 50px;
+        height: 58px;
+
+        &-logo img { height: 58px; }
+        
+        &-nav {
+            gap: 40px;
+            @include text(22px, 500);
+        }
+    }
+}
+
+@media (max-width: $mobile) {
+    .header {
+        margin: 20px;
+        height: 47px;
+
+        &-logo img { height: 47px; }
+        
+        &-nav {
+            gap: 26px;
+            @include text(12px, 500);
+            font-variant-caps: all-small-caps;
+        }
+    }
+}

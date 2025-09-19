@@ -1,0 +1,38 @@
+@use "../../utils/styles/mixin" as *;
+@use "../../utils/styles/variables" as *;
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $main-color;
+    color: $main-bg-color;
+    
+    &-logo img {
+        margin-top: 66px;
+    }
+
+    &-text {
+        @include text(24px, 500);
+        margin: 30px 120px;
+    }
+}
+
+@media (max-width: $tablet) {
+    .footer {
+        &-text {
+            @include text(20px, 500);
+        }
+    }
+}
+
+@media (max-width: $mobile) {
+    .footer {
+        &-text {
+            @include text(12px, 500);
+            text-align: center;
+            margin: 0 34% 60px;
+        }
+    }
+}
