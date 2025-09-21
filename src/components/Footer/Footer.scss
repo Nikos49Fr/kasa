@@ -19,7 +19,7 @@
     }
 }
 
-@media (max-width: $tablet) {
+@media (min-width: $mobile) and (max-width: $tablet) {
     .footer {
         &-text {
             @include text(20px, 500);

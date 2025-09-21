@@ -17,7 +17,7 @@
     }
 }
 
-@media (max-width: $tablet) {
+@media (min-width: $mobile) and (max-width: $tablet) {
     .header {
         margin: 30px 50px;
         height: 58px;
