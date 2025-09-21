@@ -8,9 +8,10 @@ const isLoading = false;
 
 export default function Home() {
     const bannerText = 'Chez vous, partout et ailleurs';
+
     return (
         <main className='home-main'>
-            <Banner img={HomeBanner} text={bannerText} />
+            <Banner img={HomeBanner} text={bannerText} variant="home" />
             {isLoading ? (
                 <section className="card-wrapper">
                     <span>Loading...</span>

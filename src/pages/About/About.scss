@@ -1,0 +1,41 @@
+@use '../../utils/styles/mixin' as *;
+@use '../../utils/styles/variables' as *;
+
+.about-main {
+    margin: 0 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 43px;
+
+    .about-values {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        margin-bottom: 38px;
+        max-width: 1024px;
+    }
+}
+
+@media (min-width: $mobile) and (max-width: $tablet) {
+    .about-main {
+        margin: 0 50px;
+        gap: 30px;
+
+        .about-values {
+            max-width: 582px;
+        }
+    }
+}
+
+@media (max-width: $mobile) {
+    .about-main {
+        margin: 0 20px;
+        gap: 22px;
+
+        .about-values {
+            max-width: 335px;
+        }
+    }
+    
+}
