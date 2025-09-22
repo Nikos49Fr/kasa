@@ -1,22 +1,24 @@
 import PropTypes from 'prop-types';
 import './Card.scss';
+import { Link } from 'react-router';
 
-export default function Card({ title, picture }) {
-
+export default function Card({ id, title, picture }) {
     return (
-        <article className='card'>
+        <Link to={`/logement/${id}`} className="card">
             <img src={picture} alt={title} />
-            <span className='card-tag'>{title}</span>
-        </article>
+            <span className="card-tag">{title}</span>
+        </Link>
     );
 }
 
 Card.propTypes = {
+    id: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     picture: PropTypes.string.isRequired,
 };
 
 Card.defaultProps = {
+    id: '',
     title: 'Titre de la location',
     picture: '',
 };

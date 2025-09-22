@@ -1,0 +1,23 @@
+@use '../../utils/styles/mixin' as *;
+@use '../../utils/styles/variables' as *;
+
+.property-main {
+    margin: 0 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+@media (min-width: $mobile) and (max-width: $tablet) {
+    .property-main {
+        margin: 0 50px;
+    }
+}
+
+@media (max-width: $mobile) {
+    .property-main {
+        margin: 0 20px;
+        gap: 15px;
+    }
+}
