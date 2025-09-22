@@ -22,6 +22,7 @@ export default function Header() {
                 </NavLink>
                 <NavLink
                     to="/a-propos"
+                    end
                     className={({ isActive }) =>
                         `header-nav__link ${
                             isActive ? 'header-nav__link--active' : ''

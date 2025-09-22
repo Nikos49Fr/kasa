@@ -1,0 +1,67 @@
+@use '../../utils/styles/mixin' as *;
+@use '../../utils/styles/variables' as *;
+
+.error-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 139px;
+    margin: 139px 0;
+    text-align: center;
+    
+    .error-title {
+        color: $default-bg-color;
+        @include text(288px, 700);
+        line-height: 100%;
+    }
+
+    .error-subtitle {
+        color: $default-bg-color;
+        @include text(36px, 500);
+        line-height: 100%;
+    }
+
+    .error__link-to-home {
+        text-decoration: underline;
+        color: $main-color;
+        @include text(18px, 500);
+    }
+}
+
+@media (min-width: $mobile) and (max-width: $tablet) {
+    .error-main {
+        gap: 126px;
+        margin: 126px 30px;
+        
+        .error-title {
+            @include text(144px, 700);
+        }
+
+        .error-subtitle {
+            @include text(24px, 500);
+        }
+
+        .error__link-to-home {
+            @include text(16px, 500);
+        }
+    }
+}
+
+@media (max-width: $mobile) {
+    .error-main {
+        gap: 113px;
+        margin: 113px 57.5px;
+        
+        .error-title {
+            @include text(96px, 700);
+        }
+
+        .error-subtitle {
+            @include text(18px, 500);
+        }
+
+        .error__link-to-home {
+            @include text(14px, 500);
+        }
+    }
+}
