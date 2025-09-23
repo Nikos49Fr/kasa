@@ -1,23 +1,165 @@
 @use '../../utils/styles/mixin' as *;
 @use '../../utils/styles/variables' as *;
 
-.property-main {
-    margin: 0 100px;
+.property {
+    margin: 0 100px 50px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 20px;
+    gap: 24px;
+
+    &__summary {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+    }
+
+    &__intro {
+        margin-bottom: 24px;
+
+        &-title {
+            @include text(36px, 500);
+            color: $default-bg-color;
+        }
+        &-location {
+            @include text(18px, 500);
+        }
+        &-tags {
+            margin: 20px 0 0;
+            list-style: none;
+            padding-left: 0;
+            display: flex;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+    }
+
+    &__sidebar {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 27px;
+    }
+
+    &__host {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 10px;
+        width: 196px;
+
+        &-name {
+            @include text(18px, 500);
+            color: $default-bg-color;
+            text-align: right;
+        }
+
+        &-picture {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background-color: #c4c4c4;
+            object-fit: cover;
+        }
+    }
+
+    &__details {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: start;
+        gap: 76px;
+    }
 }
 
 @media (min-width: $mobile) and (max-width: $tablet) {
-    .property-main {
-        margin: 0 50px;
+    .property {
+        margin: 0 60px 40px;
+        gap: 20px;
+
+        &__intro {
+            margin-bottom: 20px;
+
+            &-title {
+                @include text(24px, 500);
+            }
+            &-location {
+                @include text(16px, 500);
+            }
+            &-tags {
+                margin: 10px 0 0;
+            }
+        }
+
+        &__host {
+            width: 135px;
+
+            &-name {
+                @include text(14px, 500);
+            }
+
+            &-picture {
+                width: 48px;
+                height: 48px;
+            }
+        }
+
+        &__details {
+            display: flex;
+            flex-direction: column;
+            align-items: normal;
+            gap: 36px;
+        }
     }
 }
 
 @media (max-width: $mobile) {
-    .property-main {
-        margin: 0 20px;
+    .property {
+        margin: 0 20px 27px;
         gap: 15px;
+
+        &__summary {
+            flex-direction: column;
+        }
+
+        &__intro {
+            margin-bottom: 16px;
+
+            &-title {
+                @include text(18px, 500);
+            }
+            &-location {
+                @include text(14px, 500);
+            }
+            &-tags {
+                margin: 10px 0 0;
+            }
+        }
+
+        &__sidebar {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        &__host {
+            width: 135px;
+
+            &-name {
+                @include text(12px, 500);
+            }
+
+            &-picture {
+                width: 32px;
+                height: 32px;
+            }
+        }
+
+        &__details {
+            display: flex;
+            flex-direction: column;
+            align-items: normal;
+            gap: 20px;
+        }
     }
 }

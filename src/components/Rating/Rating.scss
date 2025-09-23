@@ -1,0 +1,35 @@
+@use '../../utils/styles/mixin' as *;
+@use '../../utils/styles/variables' as *;
+
+.property__rating {
+    display: flex;
+    gap: 15px;
+
+    &-star {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+@media (min-width: $mobile) and (max-width: $tablet) {
+    .property__rating {
+        display: flex;
+        gap: 12px;
+
+        &-star {
+            width: 18px;
+            height: 18px;
+        }
+    }
+}
+
+@media (max-width: $mobile) {
+    .property__rating {
+        gap: 6px;
+
+        &-star {
+            width: 13px;
+            height: 13px;
+        }
+    }
+}

@@ -1,11 +1,24 @@
 import './Collapse.scss';
 import collapseArrow from '../../assets/images/collapse-arrow.png';
 import { useRef, useState } from 'react';
-import PropTypes from 'prop-types';
+import PropTypes, { string } from 'prop-types';
 
 export default function Collapse({ title, content }) {
     const [isCollapsed, setIsCollapsed] = useState(true);
     const contentRef = useRef(null);
+
+    function renderContent(content) {
+        if (Array.isArray(content)) {
+            return (
+                <ul className="collapse-list">
+                    {content.map((item, i) => (
+                        <li key={`${item}-${i}`}>{item}</li>
+                    ))}
+                </ul>
+            );
+        }
+        return content;
+    }
 
     return (
         <article className="collapse-main">
@@ -19,7 +32,6 @@ export default function Collapse({ title, content }) {
                 />
             </div>
             <div
-                ref={contentRef}
                 className="collapse-content"
                 style={{
                     maxHeight: isCollapsed
@@ -27,12 +39,18 @@ export default function Collapse({ title, content }) {
                         : `${contentRef.current?.scrollHeight}px`,
                 }}
             >
-                <p>{content}</p>
+                <div ref={contentRef} className="collapse-body">
+                    {renderContent(content)}
+                </div>
             </div>
         </article>
     );
 }
+
 Collapse.propTypes = {
     title: PropTypes.string.isRequired,
-    content: PropTypes.string.isRequired,
+    content: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.arrayOf(PropTypes.string),
+    ]).isRequired,
 };

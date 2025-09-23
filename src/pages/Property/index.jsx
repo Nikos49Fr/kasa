@@ -3,44 +3,50 @@ import Slideshow from '../../components/Slideshow';
 import Collapse from '../../components/Collapse';
 import Properties from '../../assets/data/logements';
 import { useParams, Navigate } from 'react-router-dom';
+import Tag from '../../components/Tag';
+import Rating from '../../components/Rating';
 
 export default function Property() {
     const { id } = useParams();
-    
+
     const property = Properties.find((p) => p.id === id);
     if (!property) {
         return <Navigate to="/error" replace />;
     }
-/* 
-/ property = {
-/   title,
-/   description,
-/   host { name, picture },   => host.name / host.picture
-/   rating,
-/   location,
-/   equiments = [],
-/   tags = []
-/   }
-*/
+
     return (
-        <main className="property-main">
+        <main className="property">
             <Slideshow id={id} />
-            <div className='property'>
-                <div className='p-title'>
-                    <div className='p-title__title'>{property.title}</div>
-                    <div className='p-title__subtitle'>{property.location}</div>
-                </div>
-                <div className='p-tags'>map</div>
-            </div>
-            <div className='p-host'>
-                <div className='p-host__name'>{property.host.name}</div>
-                <img src={property.host.picture} alt="" className='p-host__picture'/>
-            </div>
-            <div className='p-rate'>{property.rating}</div>
-            <div className='p-details'>
-                <div className='p-details__description'>map</div>
-                <div className='p-details__equipments'>map</div>
-            </div>
+            <section className="property__summary">
+                <header className="property__intro">
+                    <h1 className="property__intro-title">{property.title}</h1>
+                    <p className="property__intro-location">
+                        {property.location}
+                    </p>
+                    <ul className="property__intro-tags">
+                        {property.tags.map((t) => (
+                            <Tag key={t} tag={t} />
+                        ))}
+                    </ul>
+                </header>
+                <aside className="property__sidebar">
+                    <div className="property__host">
+                        <p className="property__host-name">
+                            {property.host.name}
+                        </p>
+                        <img
+                            src={property.host.picture}
+                            alt={property.host.name}
+                            className="property__host-picture"
+                        />
+                    </div>
+                    <Rating rating={property.rating} />
+                </aside>
+            </section>
+            <section className="property__details">
+                <Collapse title="Description" content={property.description} />
+                <Collapse title="Equipements" content={property.equipments} />
+            </section>
         </main>
     );
 }

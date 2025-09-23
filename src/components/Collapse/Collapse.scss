@@ -36,16 +36,16 @@
         max-height: 0;
         transition: max-height 0.3s ease-out;
 
-        &--closed {
-            max-height: 0;
-        }
-        &--opened {
-            max-height: 500px;
-        }
-
-        & > p {
-            padding: 16px 20px 20px 20px;
+        & > .collapse-body {
             @include text(18px, 400);
+            padding: 16px 20px 20px 20px;
+
+            ul,
+            li {
+                margin: 0;
+                padding: 0;
+                list-style-type: none;
+            }
         }
     }
 }
@@ -61,7 +61,7 @@
             }
         }
         .collapse-content {
-            & > p {
+            & > .collapse-body {
                 padding: 13px 20px 19px 20px;
             }
         }
@@ -79,9 +79,9 @@
             }
         }
         .collapse-content {
-            & > p {
-                padding: 13px 20px 19px 20px;
+            & > .collapse-body {
                 @include text(12px, 400);
+                padding: 13px 20px 19px 20px;
             }
         }
     }

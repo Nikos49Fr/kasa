@@ -1,0 +1,30 @@
+@use '../../utils/styles/mixin' as *;
+@use '../../utils/styles/variables' as *;
+
+.tag {
+    background-color: $default-bg-color;
+    border-radius: 10px;
+    @include text(14px, 700);
+    color: $main-bg-color;
+    min-width: 75px;
+    padding: 2.5px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+@media (min-width: $mobile) and (max-width: $tablet) {
+    .tag {
+        @include text(12px, 700);
+    }
+}
+
+@media (max-width: $mobile) {
+    .tag {
+        border-radius: 5px;
+        @include text(10px, 700);
+        min-width: 64px;
+        padding: 2px 10px;
+    }
+}
