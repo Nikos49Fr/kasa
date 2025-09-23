@@ -6,8 +6,8 @@ import { useState } from 'react';
 
 export default function Slideshow({ id }) {
     const pictures = Properties.find((p) => p.id === id)?.pictures || [];
-    const [currentIndex, setCurrentindex] = useState(0);
     const len = pictures.length;
+    const [currentIndex, setCurrentindex] = useState(0);
 
     function previousPicture() {
         setCurrentindex((i) => (i === 0 ? len - 1 : i - 1));
@@ -18,12 +18,30 @@ export default function Slideshow({ id }) {
 
     return (
         <div className="slideshow">
-            <img
-                src={pictures[currentIndex]}
-                alt="Photo du logement"
-                className="slideshow__img"
-            />
-            {pictures.length > 1 && (
+            {pictures.map((src, i) => {
+                let status = '';
+                if (i === currentIndex) {
+                    status = 'is-active';
+                } else if (
+                    i === (currentIndex === 0 ? len - 1 : currentIndex - 1)
+                ) {
+                    status = 'is-prev';
+                } else if (
+                    i === (currentIndex === len - 1 ? 0 : currentIndex + 1)
+                ) {
+                    status = 'is-next';
+                }
+                return (
+                    <img
+                        key={src}
+                        src={src}
+                        alt="Photo du logement"
+                        className={`slideshow__img ${status}`}
+                    />
+                );
+            })}
+            ;
+            {len > 1 && (
                 // fragment pour englober mes 3 items
                 <>
                     <img
