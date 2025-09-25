@@ -1,7 +1,7 @@
 import './Collapse.scss';
 import collapseArrow from '../../assets/images/collapse-arrow.png';
 import { useRef, useState } from 'react';
-import PropTypes, { string } from 'prop-types';
+import PropTypes from 'prop-types';
 
 export default function Collapse({ title, content }) {
     const [isCollapsed, setIsCollapsed] = useState(true);

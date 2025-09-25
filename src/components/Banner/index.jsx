@@ -17,4 +17,4 @@ Banner.propTypes = {
 };
 Banner.defaultProps = {
     text: '',
-}
+};
