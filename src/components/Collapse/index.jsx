@@ -36,7 +36,7 @@ export default function Collapse({ title, content }) {
                 style={{
                     maxHeight: isCollapsed
                         ? '0px'
-                        : `${contentRef.current?.scrollHeight}px`,
+                        : `${contentRef.current?.scrollHeight ?? 0}px`,
                 }}
             >
                 <div ref={contentRef} className="collapse-body">
