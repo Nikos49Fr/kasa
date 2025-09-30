@@ -1,7 +1,7 @@
 import './Property.scss';
 import Slideshow from '../../components/Slideshow';
 import Collapse from '../../components/Collapse';
-import Properties from '../../assets/data/logements';
+import PROPERTIES from '../../assets/data/logements';
 import { useParams, Navigate } from 'react-router-dom';
 import Tag from '../../components/Tag';
 import Rating from '../../components/Rating';
@@ -9,7 +9,7 @@ import Rating from '../../components/Rating';
 export default function Property() {
     const { id } = useParams();
 
-    const property = Properties.find((p) => p.id === id);
+    const property = PROPERTIES.find((p) => p.id === id);
     if (!property) {
         return <Navigate to="/error" replace />;
     }

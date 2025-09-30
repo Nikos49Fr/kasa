@@ -1,5 +1,5 @@
 import Banner from '../../components/Banner';
-import Properties from '../../assets/data/logements';
+import PROPERTIES from '../../assets/data/logements';
 import Card from '../../components/Card';
 import HomeBanner from '../../assets/images/home-banner.png';
 import './Home.scss';
@@ -11,7 +11,7 @@ export default function Home() {
         <main className="home-main">
             <Banner img={HomeBanner} text={bannerText} variant="home" />
             <section className="card-wrapper">
-                {Properties.map((l, index) => (
+                {PROPERTIES.map((l, index) => (
                     <Card
                         key={`${l.id}-${index}`}
                         id={l.id}
