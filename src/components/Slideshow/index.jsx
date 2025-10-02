@@ -1,4 +1,4 @@
-import './Slideshow.scss';
+import './slideshow.scss';
 import Properties from '../../assets/data/logements';
 import leftarrow from '../../assets/images/leftarrow.png';
 import rightarrow from '../../assets/images/rightarrow.png';

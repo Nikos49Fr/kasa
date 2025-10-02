@@ -2,7 +2,7 @@ import Banner from '../../components/Banner';
 import PROPERTIES from '../../assets/data/logements';
 import Card from '../../components/Card';
 import HomeBanner from '../../assets/images/home-banner.png';
-import './Home.scss';
+import './home.scss';
 
 export default function Home() {
     const bannerText = 'Chez vous, partout et ailleurs';

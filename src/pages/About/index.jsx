@@ -1,7 +1,7 @@
 import Collapse from '../../components/Collapse';
 import Banner from '../../components/Banner';
 import AboutBanner from '../../assets/images/about-banner.png';
-import './About.scss';
+import './about.scss';
 
 const values = [
     {

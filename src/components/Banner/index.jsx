@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import './Banner.scss';
+import './banner.scss';
 
 export default function Banner({ img, variant, text }) {
     return (

@@ -1,6 +1,6 @@
 import activeStar from '../../assets/images/active-star.png';
 import inactiveStar from '../../assets/images/inactive-star.png';
-import './Rating.scss';
+import './rating.scss';
 import PropTypes from 'prop-types';
 
 export default function Rating({ rating }) {

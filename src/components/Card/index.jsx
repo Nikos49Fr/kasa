@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import './Card.scss';
+import './card.scss';
 import { Link } from 'react-router';
 
 export default function Card({ id, title, picture }) {

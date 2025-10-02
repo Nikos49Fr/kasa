@@ -1,4 +1,4 @@
-import './Property.scss';
+import './property.scss';
 import Slideshow from '../../components/Slideshow';
 import Collapse from '../../components/Collapse';
 import PROPERTIES from '../../assets/data/logements';

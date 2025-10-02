@@ -1,4 +1,4 @@
-import './Collapse.scss';
+import './collapse.scss';
 import collapseArrow from '../../assets/images/collapse-arrow.png';
 import { useRef, useState } from 'react';
 import PropTypes from 'prop-types';
