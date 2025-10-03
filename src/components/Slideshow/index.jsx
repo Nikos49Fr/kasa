@@ -1,11 +1,11 @@
 import './slideshow.scss';
-import Properties from '../../assets/data/logements';
+import PROPERTIES from '../../assets/data/logements';
 import leftarrow from '../../assets/images/leftarrow.png';
 import rightarrow from '../../assets/images/rightarrow.png';
 import { useState } from 'react';
 
 export default function Slideshow({ id }) {
-    const pictures = Properties.find((p) => p.id === id)?.pictures || [];
+    const pictures = PROPERTIES.find((p) => p.id === id)?.pictures || [];
     const len = pictures.length;
     const [currentIndex, setCurrentindex] = useState(0);
 
